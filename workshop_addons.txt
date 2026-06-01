@@ -1,0 +1,37 @@
+# =============================================
+# Workshop Addons - Left 4 Dead 2 Server
+# =============================================
+#
+# Estos addons NO están en el repositorio (son VPKs muy grandes).
+# Descargalos antes de iniciar el servidor.
+#
+# Opción 1 - Manual (más fácil):
+#   Abre cada URL en el navegador, suscríbete en Steam Workshop
+#   y descarga el .vpk desde steamapps/workshop/content/550/<ID>/
+#   Luego cópialo a: left4dead2/addons/<ID>.vpk
+#
+# Opción 2 - SteamCMD (automático, ver install.sh):
+#   ./steamcmd/steamcmd.sh +login anonymous \
+#     +workshop_download_item 550 <ID> \
+#     +quit
+#   Los archivos quedan en: steamapps/workshop/content/550/<ID>/
+#   Muévelos a: left4dead2/addons/
+#
+# URL de cada addon:
+#   https://steamcommunity.com/sharedfiles/filedetails/?id=<ID>
+# =============================================
+
+# ID               | URL
+# -----------------|-------------------------------------------------
+2031028789         # https://steamcommunity.com/sharedfiles/filedetails/?id=2031028789
+2066106924         # https://steamcommunity.com/sharedfiles/filedetails/?id=2066106924
+2080285618         # https://steamcommunity.com/sharedfiles/filedetails/?id=2080285618
+210014615          # https://steamcommunity.com/sharedfiles/filedetails/?id=210014615
+210140990          # https://steamcommunity.com/sharedfiles/filedetails/?id=210140990
+2139756699         # https://steamcommunity.com/sharedfiles/filedetails/?id=2139756699
+2188327972         # https://steamcommunity.com/sharedfiles/filedetails/?id=2188327972
+2459037122         # https://steamcommunity.com/sharedfiles/filedetails/?id=2459037122
+2462741269         # https://steamcommunity.com/sharedfiles/filedetails/?id=2462741269
+2754956355         # https://steamcommunity.com/sharedfiles/filedetails/?id=2754956355
+2795386618         # https://steamcommunity.com/sharedfiles/filedetails/?id=2795386618
+3366491323         # https://steamcommunity.com/sharedfiles/filedetails/?id=3366491323

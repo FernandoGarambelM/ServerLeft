@@ -1,0 +1,107 @@
+# =============================================
+# L4D2 Dedicated Server - .gitignore
+# Solo se suben configs, plugins y scripts.
+# Los archivos del juego base se regeneran
+# con SteamCMD (ver install.sh)
+# =============================================
+
+# -----------------------------------------------
+# ROOT: Binarios y archivos del motor de juego
+# -----------------------------------------------
+/bin/
+/hl2/
+/platform/
+/update/
+/steamapps/
+/steamcmd/
+/left4dead2_dlc1/
+/left4dead2_dlc2/
+/left4dead2_dlc3/
+/left4dead2_lv/
+/srcds_linux
+/left4dead2.exe
+/left4dead2.dat
+/left4dead2.ico
+/hlds_steamgames.vdf
+/dedicatedserver_readme.txt
+
+# -----------------------------------------------
+# L4D2: VPKs del juego base (se regeneran con SteamCMD)
+# -----------------------------------------------
+left4dead2/pak01_*.vpk
+left4dead2/pak01_dir.vpk
+
+# -----------------------------------------------
+# L4D2: Carpetas de assets del juego base
+# -----------------------------------------------
+left4dead2/models/
+left4dead2/models/**
+left4dead2/materials/
+left4dead2/materials/**
+left4dead2/media/
+left4dead2/maps/
+left4dead2/maps/**
+left4dead2/scenes/
+left4dead2/reslists/
+left4dead2/resource/
+left4dead2/ems/
+left4dead2/expressions/
+left4dead2/gfx/
+left4dead2/bin/
+
+# -----------------------------------------------
+# L4D2: Carpetas de runtime (no se necesitan en git)
+# -----------------------------------------------
+left4dead2/logs/
+left4dead2/downloads/
+
+# -----------------------------------------------
+# L4D2: Archivos de caché auto-generados
+# -----------------------------------------------
+left4dead2/*.cache
+left4dead2/modelsounds.cache
+left4dead2/scene.cache
+left4dead2/program_cache.cfg
+left4dead2/shader_cache.cfg
+left4dead2/glbaseshaders.cfg
+left4dead2/stats.txt
+
+# -----------------------------------------------
+# Workshop Addons VPKs
+# (listados en workshop_addons.txt para re-descarga)
+# -----------------------------------------------
+left4dead2/addons/*.vpk
+# Excepciones: archivos pequeños que NO son del Workshop
+!left4dead2/addons/l4dtoolz.dll
+!left4dead2/addons/l4dtoolz.so
+
+# -----------------------------------------------
+# MetaMod: Binarios compilados (se reinstalan con install.sh)
+# -----------------------------------------------
+left4dead2/addons/metamod/bin/
+
+# -----------------------------------------------
+# SourceMod: Binarios y extensiones compiladas
+# (se reinstalan con install.sh, son binarios estándar)
+# -----------------------------------------------
+left4dead2/addons/sourcemod/bin/
+left4dead2/addons/sourcemod/extensions/
+
+# -----------------------------------------------
+# SourceMod: Base de datos GeoIP (60MB, descargable)
+# -----------------------------------------------
+left4dead2/addons/sourcemod/configs/geoip/
+
+# -----------------------------------------------
+# SourceMod: Logs de runtime
+# -----------------------------------------------
+left4dead2/addons/sourcemod/logs/
+
+# -----------------------------------------------
+# Archivos del sistema / editor
+# -----------------------------------------------
+*.swp
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
