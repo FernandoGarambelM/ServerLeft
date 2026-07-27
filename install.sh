@@ -83,9 +83,13 @@ cd "$INSTALL_DIR"
 echo -e "${YELLOW}[3/5] Instalando L4D2 Dedicated Server via SteamCMD...${NC}"
 echo -e "${CYAN}(Esto puede tardar varios minutos dependiendo de tu conexión)${NC}"
 
+echo -e "${YELLOW}Valve ha bloqueado recientemente las descargas anónimas para servidores de L4D2.${NC}"
+echo -e "${YELLOW}Necesitas usar tu cuenta de Steam que tenga el juego comprado.${NC}"
+read -p "Ingresa tu nombre de usuario de Steam: " STEAM_USER
+
 "$STEAMCMD_DIR/steamcmd.sh" \
     +force_install_dir "$INSTALL_DIR" \
-    +login anonymous \
+    +login "$STEAM_USER" \
     +app_update "$L4D2_APP_ID" validate \
     +quit
 
@@ -96,8 +100,10 @@ echo -e "${GREEN}✓ L4D2 instalado/actualizado${NC}"
 # -----------------------------------------------
 echo -e "${YELLOW}[4/5] Instalando MetaMod:Source y SourceMod...${NC}"
 
-METAMOD_URL="https://mms.alliedmods.net/mmsdrop/1.12/mmsource-1.12.0-git1211-linux.tar.gz"
-SOURCEMOD_URL="https://sm.alliedmods.net/smdrop/1.12/sourcemod-1.12.0-git7174-linux.tar.gz"
+METAMOD_LATEST=$(curl -s https://mms.alliedmods.net/mmsdrop/1.12/mmsource-latest-linux || echo "mmsource-1.12.0-git1211-linux.tar.gz")
+METAMOD_URL="https://mms.alliedmods.net/mmsdrop/1.12/$METAMOD_LATEST"
+SOURCEMOD_LATEST=$(curl -s https://sm.alliedmods.net/smdrop/1.12/sourcemod-latest-linux || echo "sourcemod-1.12.0-git7246-linux.tar.gz")
+SOURCEMOD_URL="https://sm.alliedmods.net/smdrop/1.12/$SOURCEMOD_LATEST"
 
 TMP_DIR=$(mktemp -d)
 
@@ -156,7 +162,7 @@ if [ -f "$INSTALL_DIR/workshop_addons.txt" ]; then
                 # Intentar descargar via SteamCMD
                 echo "    Descargando via SteamCMD..."
                 "$STEAMCMD_DIR/steamcmd.sh" \
-                    +login anonymous \
+                    +login "$STEAM_USER" \
                     +workshop_download_item 550 "$ID" \
                     +quit 2>/dev/null || true
                 # Buscar el VPK descargado y moverlo
@@ -182,7 +188,7 @@ echo -e "  ✓ Instalación completada"
 echo -e "=============================================${NC}"
 echo ""
 echo -e "Para iniciar el servidor:"
-echo -e "  ${CYAN}./srcds_run -game left4dead2 -console -port 27015 +sv_setmax 31 -tickrate 100 +map c1m1_hotel${NC}"
+echo -e "  ${CYAN}./srcds_run -game left4dead2 -console -port 27015 +sv_setmax 16 -tickrate 60 +map c1m1_hotel${NC}"
 echo ""
 echo -e "Si hay addons del Workshop que faltan, edita y ejecuta:"
 echo -e "  ${CYAN}cat workshop_addons.txt${NC}"
