@@ -1,12 +1,72 @@
-// Custom admin menu commands.
-// For more information:
-//
-// http://wiki.alliedmods.net/Custom_Admin_Menu_%28SourceMod%29
-//
-// Note: This file must be in Valve KeyValues format (no multiline comments)
-//
+// ==============================================================================
+// adminmenu_custom.txt - Menú personalizado para administradores (!admin)
+// ==============================================================================
 
 "Commands"
 {
-
+	"Gestion del Servidor"
+	{
+		"admin"		"sm_cvar"
+		
+		"Cambiar Modo de Juego"
+		{
+			"cmd"		"sm_cvar mp_gamemode #1"
+			"admin"		"sm_cvar"
+			"execute"	"server"
+			"1"
+			{
+				"type"		"list"
+				"title"		"Selecciona Modo de Juego:"
+				"1"		"coop"
+				"1."	"Cooperativo (Coop)"
+				"2"		"versus"
+				"2."	"Enfrentamiento (Versus 8v8)"
+				"3"		"survival"
+				"3."	"Supervivencia (Survival)"
+				"4"		"realism"
+				"4."	"Realismo (Realism)"
+			}
+		}
+		
+		"Cambiar Dificultad"
+		{
+			"cmd"		"sm_cvar z_difficulty #1"
+			"admin"		"sm_cvar"
+			"execute"	"server"
+			"1"
+			{
+				"type"		"list"
+				"title"		"Selecciona Dificultad:"
+				"1"		"Easy"
+				"1."	"Facil (Easy)"
+				"2"		"Normal"
+				"2."	"Normal"
+				"3"		"Hard"
+				"3."	"Avanzado (Hard)"
+				"4"		"Impossible"
+				"4."	"Experto (Impossible)"
+			}
+		}
+		
+		"Reiniciar Ronda"
+		{
+			"cmd"		"sm_cvar mp_restartgame 1"
+			"admin"		"sm_cvar"
+			"execute"	"server"
+		}
+		
+		"Crear Bot Superviviente"
+		{
+			"cmd"		"sm_bot"
+			"admin"		"sm_kick"
+			"execute"	"player"
+		}
+		
+		"Desreservar Servidor"
+		{
+			"cmd"		"sm_cvar sv_allow_lobby_connect_only 0; sm_cvar sv_force_unreserved 1"
+			"admin"		"sm_cvar"
+			"execute"	"server"
+		}
+	}
 }
