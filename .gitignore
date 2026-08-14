@@ -98,8 +98,12 @@ left4dead2/addons/sourcemod/configs/geoip/
 left4dead2/addons/sourcemod/logs/
 
 # -----------------------------------------------
-# Archivos del sistema / editor
+# Archivos del sistema / editor / agentes
 # -----------------------------------------------
+.agents/
+.claude/
+.gemini/
+.cursor/
 *.swp
 *.bak
 *.tmp
