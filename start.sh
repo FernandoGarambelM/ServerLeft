@@ -307,7 +307,7 @@ interactive_launch() {
         17) SEL_MAP="Glubtastic3_1" ;;
         18) SEL_MAP="glubtastic4_1" ;;
         19) SEL_MAP="Back4Glub" ;;
-        20) SEL_MAP="anemoia_1" ;;
+        20) SEL_MAP="anemoia_arcade" ;;
         21) SEL_MAP="C1_mario1_1" ;;
         22) SEL_MAP="yanahuara" ;;
         23) SEL_MAP="hehe20_1" ;;
