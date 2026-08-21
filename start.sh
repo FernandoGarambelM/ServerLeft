@@ -225,9 +225,10 @@ interactive_menu() {
         echo -e "  ${BOLD}[5]${NC} ${GREEN}Iniciar Rápido (Glubtastic 2)${NC}"
         echo -e "  ${BOLD}[6]${NC} ${GREEN}Iniciar Rápido (Glubtastic 3)${NC}"
         echo -e "  ${BOLD}[7]${NC} ${GREEN}Iniciar Rápido (Glubtastic 4)${NC}"
+        echo -e "  ${BOLD}[8]${NC} ${GREEN}Iniciar Rápido (Anemoia - Backrooms)${NC}"
         echo -e "  ${BOLD}[0]${NC} Salir"
         echo ""
-        read -p "Selecciona una opción [0-7]: " opc
+        read -p "Selecciona una opción [0-8]: " opc
         case "$opc" in
             1) interactive_launch ;;
             2) launch_server "coop" "c1m1_hotel" "Normal" "true" ;;
@@ -236,6 +237,7 @@ interactive_menu() {
             5) launch_server "coop" "Glubtastic2_1" "Normal" "true" ;;
             6) launch_server "coop" "Glubtastic3_1" "Normal" "true" ;;
             7) launch_server "coop" "glubtastic4_1" "Normal" "true" ;;
+            8) launch_server "coop" "anemoia_1" "Normal" "true" ;;
             *) exit 0 ;;
         esac
     fi
@@ -279,11 +281,12 @@ interactive_launch() {
     echo "  [17] Glubtastic 3 (Glubtastic3_1)"
     echo "  [18] Glubtastic 4 (glubtastic4_1)"
     echo "  [19] Glubtastic: Back 4 Glub (Back4Glub)"
-    echo "  [20] Left 4 Mario (C1_mario1_1)"
-    echo "  [21] Yanahuara (yanahuara)"
-    echo "  [22] Hehe20 (hehe20_1)"
-    echo "  [23] Escribir mapa manualmente"
-    read -p "Elige la campaña [1-23, defecto: 1]: " map_opt
+    echo "  [20] Anemoia - Backrooms (anemoia_1)"
+    echo "  [21] Left 4 Mario (C1_mario1_1)"
+    echo "  [22] Yanahuara (yanahuara)"
+    echo "  [23] Hehe20 (hehe20_1)"
+    echo "  [24] Escribir mapa manualmente"
+    read -p "Elige la campaña [1-24, defecto: 1]: " map_opt
     case "$map_opt" in
         1)  SEL_MAP="c1m1_hotel" ;;
         2)  SEL_MAP="c2m1_highway" ;;
@@ -304,10 +307,11 @@ interactive_launch() {
         17) SEL_MAP="Glubtastic3_1" ;;
         18) SEL_MAP="glubtastic4_1" ;;
         19) SEL_MAP="Back4Glub" ;;
-        20) SEL_MAP="C1_mario1_1" ;;
-        21) SEL_MAP="yanahuara" ;;
-        22) SEL_MAP="hehe20_1" ;;
-        23) 
+        20) SEL_MAP="anemoia_1" ;;
+        21) SEL_MAP="C1_mario1_1" ;;
+        22) SEL_MAP="yanahuara" ;;
+        23) SEL_MAP="hehe20_1" ;;
+        24) 
             read -p "Ingresa el nombre del archivo bsp (sin .bsp): " custom_map
             SEL_MAP="$custom_map"
             ;;

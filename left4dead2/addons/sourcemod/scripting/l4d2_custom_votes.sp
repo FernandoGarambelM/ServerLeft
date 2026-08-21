@@ -157,6 +157,7 @@ void ShowMapMenu(int client)
     menu.AddItem("Glubtastic3_1", "[Custom] Glubtastic 3");
     menu.AddItem("glubtastic4_1", "[Custom] Glubtastic 4");
     menu.AddItem("Back4Glub", "[Custom] Back 4 Glub");
+    menu.AddItem("anemoia_1", "[Custom] Anemoia (Backrooms)");
     menu.AddItem("C1_mario1_1", "[Custom] Left 4 Mario");
     menu.AddItem("yanahuara", "[Custom] Yanahuara");
     menu.AddItem("hehe20_1", "[Custom] Hehe20");
